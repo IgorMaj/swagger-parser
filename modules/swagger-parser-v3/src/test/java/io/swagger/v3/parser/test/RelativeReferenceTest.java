@@ -161,4 +161,17 @@ public class RelativeReferenceTest {
         Assert.assertTrue(validationMessages.isEmpty(), validationMessages.toString());
 
     }
+
+    @Test
+    public void testResolveRelativeSameDirectoryPath() {
+        ParseOptions options = new ParseOptions();
+        options.setResolve(true);
+        SwaggerParseResult parseResult = new OpenAPIV3Parser().readLocation("/relativeParentSameDirectory/root.yaml", null, options);
+
+        Assert.assertNotNull(parseResult.getOpenAPI());
+
+        HashSet<String> validationMessages = new HashSet<>(null != parseResult.getMessages() ? parseResult.getMessages() : new ArrayList<>());
+        Assert.assertTrue(validationMessages.isEmpty(), validationMessages.toString());
+
+    }
 }

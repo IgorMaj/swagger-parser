@@ -1,0 +1,18 @@
+operations:
+  get:
+    summary: Example API endpoint
+    operationId: getExample
+    responses:
+      200:
+        description: Success response
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExampleResponse'
+components:
+  schemas:
+    ExampleResponse:
+      type: object
+      properties:
+        data:
+          $ref: ../components/schemas/ExampleData.yaml

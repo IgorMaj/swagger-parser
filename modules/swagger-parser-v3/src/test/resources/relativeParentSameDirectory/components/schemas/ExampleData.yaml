@@ -1,0 +1,7 @@
+type: object
+description: Schema with relative reference that fails
+additionalProperties:
+  type: object
+  properties:
+    nested:
+      $ref: ./NestedData.yaml
